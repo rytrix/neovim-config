@@ -8,8 +8,8 @@ opt.number = true                -- bool: Show line numbers
 opt.relativenumber = true        -- bool: Show relative line numbers
 opt.scrolloff = 4                -- int:  Min num lines of context
 --opt.signcolumn = "yes"         -- str:  Show the sign column
-vim.o.mouse = 'a'                -- Enable mouse mode
-vim.o.breakindent = true         -- Enable break indent
+vim.o.mouse = ''                -- Enable mouse mode
+vim.o.breakindent = false         -- Enable break indent
 
 vim.o.updatetime = 250           -- Decrease update time
 vim.o.completeopt = 'menuone,noselect' -- Set completeopt to have a better completion experience
@@ -32,7 +32,7 @@ opt.incsearch = true             -- bool: Use incremental search
 opt.hlsearch = false             -- bool: Highlight search matches
 
 -- whitespace
-opt.expandtab = true             -- bool: Use spaces instead of tabs
+opt.expandtab = false             -- bool: Use spaces instead of tabs
 opt.shiftwidth = 4               -- num:  Size of an indent
 opt.softtabstop = 4              -- num:  Number of spaces tabs count for in insert mode
 opt.tabstop = 4                  -- num:  Number of spaces tabs count for

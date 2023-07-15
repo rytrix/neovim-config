@@ -79,6 +79,7 @@ require("mason-lspconfig").setup({
         -- Replace these with whatever servers you want to install
         'rust_analyzer',
         'clangd',
+		'wgsl_analyzer'
     }
 })
 
@@ -109,24 +110,35 @@ local lsp_capabilities = vim.lsp.protocol.make_client_capabilities()
 lsp_capabilities = require('cmp_nvim_lsp').default_capabilities(lsp_capabilities)
 -- local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-require('mason-lspconfig').setup_handlers({
-    function(server_name)
-        lspconfig[server_name].setup({
-            capabilities = lsp_capabilities,
-            on_attach = lsp_on_attach,
-        })
-    end,
-})
+-- require('mason-lspconfig').setup_handlers({
+--     function(server_name)
+--         lspconfig[server_name].setup({
+--             capabilities = lsp_capabilities,
+--             on_attach = lsp_on_attach,
+--         })
+--     end,
+-- })
 
--- -- if servers are not working try this:
--- local get_servers = require('mason-lspconfig').get_installed_servers
--- -- Enable the following language servers
--- for _, server_name in ipairs(get_servers()) do
---     lspconfig[server_name].setup({
---         capabilities = lsp_capabilities,
---         on_attach = lsp_on_attach,
---     })
--- end
+-- if servers are not working try this:
+local get_servers = require('mason-lspconfig').get_installed_servers
+-- Enable the following language servers
+for _, server_name in ipairs(get_servers()) do
+	if server_name == "wgsl_analyzer" then
+		lspconfig[server_name].setup({
+			capabilities = lsp_capabilities,
+			on_attach = lsp_on_attach,
+			filetypes = {"wgsl"}
+		})
+	else
+		lspconfig[server_name].setup({
+			capabilities = lsp_capabilities,
+			on_attach = lsp_on_attach,
+		})
+	end
+end
+
+-- Recognize wgsl -- weird plugin
+vim.api.nvim_command("autocmd BufNewFile,BufRead *.wgsl set filetype=wgsl")
 
 require('neodev').setup {}
 
