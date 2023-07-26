@@ -8,11 +8,13 @@ opt.number = true                -- bool: Show line numbers
 opt.relativenumber = true        -- bool: Show relative line numbers
 opt.scrolloff = 4                -- int:  Min num lines of context
 --opt.signcolumn = "yes"         -- str:  Show the sign column
-vim.o.mouse = ''                -- Enable mouse mode
-vim.o.breakindent = false         -- Enable break indent
+vim.o.mouse = 'a'                -- Enable mouse mode
+vim.o.breakindent = false        -- Enable break indent
 
 vim.o.updatetime = 250           -- Decrease update time
 vim.o.completeopt = 'menuone,noselect' -- Set completeopt to have a better completion experience
+
+vim.opt.undofile = true			 -- Enable persistent undo
 
 -- opt.clipboard = "unnamedplus"    -- Use the system clipboard
 
@@ -24,6 +26,7 @@ opt.fileencoding = 'utf8'        -- str:  File encoding to use
 opt.syntax = "ON"                -- str:  Allow syntax highlighting
 opt.termguicolors = true         -- bool: If term supports ui color then enable
 cmd('colorscheme onedark')
+-- cmd('colorscheme dracula')
 
 -- search
 opt.ignorecase = true            -- bool: Ignore case in search patterns

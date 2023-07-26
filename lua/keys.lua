@@ -19,28 +19,34 @@ set('n', '<leader>u', vim.cmd.UndotreeToggle, {})
 
 
 -- Map `j` to move up
-map("n", "j", "k", {noremap = true})
-map("v", "j", "k", {noremap = true})
--- Map `k` to move down
-map("n", "k", "j", {noremap = true})
-map("v", "k", "j", {noremap = true})
+-- map("n", "j", "k", {noremap = true})
+-- map("v", "j", "k", {noremap = true})
+-- -- Map `k` to move down
+-- map("n", "k", "j", {noremap = true})
+-- map("v", "k", "j", {noremap = true})
+
+-- Remap Ctrl+w+j to move to the window below
+-- map('n', '<C-w>j', '<C-w><Down>', { noremap = true })
+-- -- Remap Ctrl+w+k to move to the window above
+-- map('n', '<C-w>k', '<C-w><Up>', { noremap = true })
+
 --Remap for dealing with word wrap
-set('n', 'j', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-set('n', 'k', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+-- set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+-- set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 map("n", "<C-Shift-C>", ":yank<CR>", {noremap = true}) -- yank 
 
 -- for moving text up and down in visual mode (auto indents too)
-set("v", "J", ":m '<-2<CR>gv=gv")
-set("v", "K", ":m '>+1<CR>gv=gv")
+set("v", "K", ":m '<-2<CR>gv=gv")
+set("v", "J", ":m '>+1<CR>gv=gv")
 
-set("n", "J", "mzJ`z") -- J stays in place
+-- set("n", "J", "mzJ`z") -- J stays in place
 
 -- half page jumping, keeps cursor in the center
-set({"n","v"}, "<C-j>", "<C-u>zz")
-set({"n","v"}, "<C-k>", "<C-d>zz")
-set({"n","v"}, "<leader>j", "<C-u>zz")
-set({"n","v"}, "<leader>k", "<C-d>zz")
+set({"n","v"}, "<C-k>", "<C-u>zz")
+set({"n","v"}, "<C-j>", "<C-d>zz")
+set({"n","v"}, "<leader>k", "<C-u>zz")
+set({"n","v"}, "<leader>j", "<C-d>zz")
 
 -- keep cursor in the middle when going through searches
 set("n", "n", "nzzzv")

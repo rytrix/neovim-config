@@ -29,7 +29,7 @@ require("lazy").setup({
             lazy = true
         },
     },
-    -- 'Mofiqul/dracula.nvim',                      -- dracula theme
+    --'Mofiqul/dracula.nvim',                      -- dracula theme
     'navarasu/onedark.nvim', -- onedark theme
     'mbbill/undotree',       -- undo tree view (<Leader> f5)
     "nvim-lua/plenary.nvim",
