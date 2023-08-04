@@ -30,27 +30,26 @@ require 'nvim-treesitter.configs'.setup {
 
 	-- Install parsers synchronously (only applied to `ensure_installed`)
 	sync_install = false,
-
 	-- Automatically install missing parsers when entering buffer
 	-- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
 	auto_install = true,
-
 	-- List of parsers to ignore installing (for "all")
 	ignore_install = {},
-
 	---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
 	-- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
 
 	highlight = {
 		enable = true,
-
 		-- NOTE: these are the names of the parsers and not the filetype. (for example if you want to
 		-- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
 		-- the name of the parser)
 		-- list of language that will be disabled
-		-- disable = { },
+		-- disable = { "latex" },
 		-- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
 		disable = function(lang, buf)
+			if lang == "latex" then
+				return true
+			end
 			local max_filesize = 100 * 1024 -- 100 KB
 			local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
 			if ok and stats and stats.size > max_filesize then
@@ -64,6 +63,7 @@ require 'nvim-treesitter.configs'.setup {
 		-- Instead of true it can also be a list of languages
 		additional_vim_regex_highlighting = false,
 	},
+	modules = {},
 }
 
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -216,6 +216,26 @@ vim.keymap.set("n", "<C-4>", function() ui.nav_file(4) end)
 vim.keymap.set("n", "<C-5>", function() ui.nav_file(5) end)
 vim.keymap.set("n", "<C-6>", function() ui.nav_file(6) end)
 vim.keymap.set("n", "<C-7>", function() ui.nav_file(7) end)
+vim.keymap.set("n", "<C-8>", function() ui.nav_file(8) end)
+vim.keymap.set("n", "<C-9>", function() ui.nav_file(9) end)
+vim.keymap.set("n", "<C-0>", function() ui.nav_file(10) end)
+
+require("transparent").setup({
+  groups = { -- table: default groups
+    'Normal', 'NormalNC', 'Comment', 'Constant', 'Special', 'Identifier',
+    'Statement', 'PreProc', 'Type', 'Underlined', 'Todo', 'String', 'Function',
+    'Conditional', 'Repeat', 'Operator', 'Structure', 'LineNr', 'NonText',
+    'SignColumn', 'CursorLineNr', 'EndOfBuffer',
+  },
+  extra_groups = {}, -- table: additional groups that should be cleared
+  exclude_groups = {}, -- table: groups you don't want to clear
+})
+
+require("onedark").setup({
+	transparent = vim.g.transparent_enabled
+})
+
+
 
 
 

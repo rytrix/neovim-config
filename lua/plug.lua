@@ -21,7 +21,7 @@ require("lazy").setup({
         dependencies = 'kyazdani42/nvim-web-devicons',
     },
     'mhinz/vim-startify',            -- start screen
-    'DanilaMihailov/beacon.nvim',    -- cursor jump highlighting
+    -- 'DanilaMihailov/beacon.nvim',    -- cursor jump highlighting
     {
         'nvim-lualine/lualine.nvim', -- bar on the bottom of the screen
         dependencies = {
@@ -65,4 +65,5 @@ require("lazy").setup({
         },
     },
     "theprimeagen/harpoon", -- file navigation
+	"xiyaowong/transparent.nvim",
 })

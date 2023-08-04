@@ -1,7 +1,7 @@
 -- init.lua
 
 --faster startup?
-vim.loader.enable()
+--vim.loader.enable()
 
 -- LEADER
 -- These keybindings need to be defined before the first /
@@ -16,3 +16,4 @@ require('vars')        -- Variables
 require('opts')        -- Options
 require('keys')        -- Keymaps
 require('plug_setup')  -- Plugin setups
+
