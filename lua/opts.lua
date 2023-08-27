@@ -10,6 +10,7 @@ opt.scrolloff = 4                -- int:  Min num lines of context
 --opt.signcolumn = "yes"         -- str:  Show the sign column
 vim.o.mouse = 'a'                -- Enable mouse mode
 vim.o.breakindent = false        -- Enable break indent
+-- vim.opt.guicursor = ""			 -- cursor?
 
 vim.o.updatetime = 250           -- Decrease update time
 vim.o.completeopt = 'menuone,noselect' -- Set completeopt to have a better completion experience

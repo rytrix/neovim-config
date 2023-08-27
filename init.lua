@@ -15,5 +15,4 @@ require('plug')        -- Plugins
 require('vars')        -- Variables
 require('opts')        -- Options
 require('keys')        -- Keymaps
-require('plug_setup')  -- Plugin setups
 
