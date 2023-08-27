@@ -1,5 +1,4 @@
 -- plug.lua
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -18,6 +17,3 @@ require("lazy").setup({
 		import = "plugins"
 	},
 })
--- 'mhinz/vim-startify', -- start screen
--- 'DanilaMihailov/beacon.nvim',    -- cursor jump highlighting
-
