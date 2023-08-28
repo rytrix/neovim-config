@@ -1,6 +1,8 @@
 return {
 	{
 		"neovim/nvim-lspconfig",
+		lazy = true,
+		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			local lspconfig = require('lspconfig')
 			local lsp_on_attach = function(_, bufnr)
@@ -71,12 +73,16 @@ return {
 	{
 		"williamboman/mason.nvim", -- :Mason to download lsps
 		build = ":MasonUpdate", -- :MasonUpdate updates registry contents
+		lazy = true,
+		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			require("mason").setup()
 		end
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
+		lazy = true,
+		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
@@ -99,6 +105,8 @@ return {
 			'L3MON4D3/LuaSnip', -- Snippets plugin
 			'saadparwaiz1/cmp_luasnip' -- source for nvim-cmp
 		},
+		lazy = true,
+		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			local cmp = require('cmp')
 			local luasnip = require('luasnip')
