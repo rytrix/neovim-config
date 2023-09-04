@@ -88,9 +88,7 @@ return {
 				ensure_installed = {
 					-- Replace these with whatever servers you want to install
 					'lua_ls',
-					'rust_analyzer',
 					'clangd',
-					'wgsl_analyzer'
 				}
 			})
 		end
