@@ -77,7 +77,7 @@ set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 -- make current file executable
 set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
-set({"n", "v"}, "<C-h>", "<Home>", {noremap = true})
+set({"n", "v"}, "<C-h>", "^", {noremap = true})
 set({"n", "v"}, "<C-l>", "<End>", {noremap = true})
 
 set("n", "<leader>h", "<Home>", {noremap = true})
