@@ -1,10 +1,6 @@
 return {
 	{
 		"theprimeagen/harpoon", -- file navigation
-		lazy = true,
-		keys = { "<C-e>", "<C-e>", "<C-1>", "<C-2>",
-			"<C-3>", "<C-4>", "<C-5>", "<C-6>",
-			"<C-7>", "<C-8>", "<C-9>", "<C-0>", },
 		config = function()
 			local mark = require("harpoon.mark")
 			local ui = require("harpoon.ui")
