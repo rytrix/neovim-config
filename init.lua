@@ -21,4 +21,4 @@ require('keys') -- Keymaps
 -- vim.cmd('match ExtraWhitespace /\\s\\+$/')
 
 -- Automatically remove trailing whitespace before writing the buffer
-vim.cmd([[autocmd BufWritePre * %s/\s\+$//e]])
+-- vim.cmd([[autocmd BufWritePre * %s/\s\+$//e]])
