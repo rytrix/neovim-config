@@ -1,3 +1,6 @@
+-- return {
+--
+-- }
 return {
 	{
 		"theprimeagen/harpoon", -- file navigation
