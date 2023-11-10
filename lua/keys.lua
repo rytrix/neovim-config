@@ -83,5 +83,6 @@ set("n", "<leader>h", "<Home>", { noremap = true })
 set("n", "<leader>l", "<End>", { noremap = true })
 
 vim.api.nvim_command("command! W :w")
+vim.api.nvim_command("command! Wq :wq")
 
 
