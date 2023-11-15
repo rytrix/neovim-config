@@ -9,7 +9,8 @@ return {
 			require('lualine').setup {
 				options = {
 					-- theme = 'dracula-nvim'
-					theme = 'onedark'
+					-- theme = 'onedark'
+					theme = 'catppuccin'
 				}
 			}
 		end
