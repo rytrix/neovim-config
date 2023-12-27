@@ -42,6 +42,11 @@ opt.shiftwidth = 4   -- num:  Size of an indent
 opt.softtabstop = 4  -- num:  Number of spaces tabs count for in insert mode
 opt.tabstop = 4      -- num:  Number of spaces tabs count for
 
+-- bad indentation is VERY annoying
+opt.autoindent = false
+opt.smartindent = false
+opt.cindent = false
+
 -- splits
 opt.splitright = true -- bool: Place new window to right of current one
 opt.splitbelow = true -- bool: Place new window below the current one

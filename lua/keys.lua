@@ -7,7 +7,7 @@ local set = vim.keymap.set
 -- mode sequence command options
 
 -- map('n', 'l', ':IndentLinesToggle<CR>', {})
-set('n', '<leader>;', vim.cmd.IndentLinesToggle, {})
+-- set('n', '<leader>;', vim.cmd.IndentLinesToggle, {})
 
 local builtin = require('telescope.builtin')
 set('n', '<leader>s', builtin.find_files, {})
