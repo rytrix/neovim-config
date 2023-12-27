@@ -10,10 +10,10 @@ local set = vim.keymap.set
 set('n', '<leader>;', vim.cmd.IndentLinesToggle, {})
 
 local builtin = require('telescope.builtin')
-set('n', '<leader>pf', builtin.find_files, {})
-set('n', '<leader>pg', builtin.live_grep, {})
-set('n', '<leader>pb', builtin.buffers, {})
-set('n', '<leader>ph', builtin.help_tags, {})
+set('n', '<leader>s', builtin.find_files, {})
+set('n', '<leader>g', builtin.live_grep, {})
+set('n', '<leader>b', builtin.buffers, {})
+set('n', '<leader>h', builtin.help_tags, {})
 
 set('n', '<leader>u', vim.cmd.UndotreeToggle, {})
 
@@ -72,15 +72,12 @@ set("n", "<leader>f", vim.lsp.buf.format)
 -- set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 -- search on current word
-set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 -- make current file executable
 set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 set({ "n", "v" }, "<C-h>", "^", { noremap = true })
-set({ "n", "v" }, "<C-l>", "<End>", { noremap = true })
-
-set("n", "<leader>h", "<Home>", { noremap = true })
-set("n", "<leader>l", "<End>", { noremap = true })
+set({ "n", "v" }, "<C-l>", "$", { noremap = true })
 
 vim.api.nvim_command("command! W :w")
 vim.api.nvim_command("command! Wq :wq")
