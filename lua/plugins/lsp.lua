@@ -57,6 +57,10 @@ return {
 			-- Recognize wgsl -- weird plugin
 			vim.api.nvim_command("autocmd BufNewFile,BufRead *.wgsl set filetype=wgsl")
 
+            lspconfig.glslls.setup{
+                cmd = { "glslls", "--stdin", "--target-env=opengl4.5" }
+            }
+
 			lspconfig.lua_ls.setup {
 				on_attach = lsp_on_attach,
 				capabilities = lsp_capabilities,
