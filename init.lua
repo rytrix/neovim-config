@@ -14,8 +14,8 @@ require('opts') -- Options
 require('keys') -- Keymaps
 
 -- Highlight trailing whitespace in red
-vim.cmd('highlight ExtraWhitespace ctermbg=red guibg=red')
-vim.cmd('match ExtraWhitespace /\\s\\+$/')
+-- vim.cmd('highlight ExtraWhitespace ctermbg=red guibg=red')
+-- vim.cmd('match ExtraWhitespace /\\s\\+$/')
 
 -- Automatically remove trailing whitespace before writing the buffer
 -- vim.cmd([[autocmd BufWritePre * %s/\s\+$//e]])
