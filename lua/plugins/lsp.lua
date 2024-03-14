@@ -20,7 +20,7 @@ return {
 				vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, attach_opts)
 				vim.keymap.set('n', 'so', require('telescope.builtin').lsp_references, attach_opts)
 				vim.keymap.set('n', 'ca', vim.lsp.buf.code_action, attach_opts)
-				vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
+				vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 			end
 
 			-- nvim-cmp supports additional completion capabilities
