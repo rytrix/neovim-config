@@ -21,6 +21,7 @@ return {
 			vim.keymap.set("n", "<C-8>", function() ui.nav_file(8) end)
 			vim.keymap.set("n", "<C-9>", function() ui.nav_file(9) end)
 			vim.keymap.set("n", "<C-0>", function() ui.nav_file(10) end)
-		end
+
+        end
 	}
 }

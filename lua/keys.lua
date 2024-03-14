@@ -2,10 +2,6 @@
 local map = vim.api.nvim_set_keymap
 local set = vim.keymap.set
 
--- remap the key used to leave insert mode
--- map('i', 'jk', '', {})
--- mode sequence command options
-
 -- map('n', 'l', ':IndentLinesToggle<CR>', {})
 -- set('n', '<leader>;', vim.cmd.IndentLinesToggle, {})
 
@@ -16,18 +12,6 @@ set('n', '<leader>b', builtin.buffers, {})
 set('n', '<leader>h', builtin.help_tags, {})
 
 set('n', '<leader>u', vim.cmd.UndotreeToggle, {})
-
--- Map `j` to move up
--- map("n", "j", "k", {noremap = true})
--- map("v", "j", "k", {noremap = true})
--- -- Map `k` to move down
--- map("n", "k", "j", {noremap = true})
--- map("v", "k", "j", {noremap = true})
-
--- Remap Ctrl+w+j to move to the window below
--- map('n', '<C-w>j', '<C-w><Down>', { noremap = true })
--- -- Remap Ctrl+w+k to move to the window above
--- map('n', '<C-w>k', '<C-w><Up>', { noremap = true })
 
 --Remap for dealing with word wrap
 -- set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
@@ -65,12 +49,6 @@ set("n", "Q", "<nop>") -- prime told me to do this idk why
 
 set("n", "<leader>f", vim.lsp.buf.format)
 
--- quicklist navigation -- no idea what this does other than spit out errors
--- set("n", "<C-k>", "<cmd>cnext<CR>zz")
--- set("n", "<C-j>", "<cmd>cprev<CR>zz")
--- set("n", "<leader>k", "<cmd>lnext<CR>zz")
--- set("n", "<leader>j", "<cmd>lprev<CR>zz")
-
 -- search on current word
 set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 -- make current file executable
@@ -79,7 +57,6 @@ set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 set({ "n", "v" }, "<C-h>", "^", { noremap = true })
 set({ "n", "v" }, "<C-l>", "$", { noremap = true })
 
+-- I accident do :W so much
 vim.api.nvim_command("command! W :w")
 vim.api.nvim_command("command! Wq :wq")
-
-
