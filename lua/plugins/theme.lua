@@ -1,5 +1,5 @@
 return {
-	--'Mofiqul/dracula.nvim',                      -- dracula theme
+    --'Mofiqul/dracula.nvim',
     {
         "catppuccin/nvim",
         name = "catppuccin",
@@ -8,13 +8,12 @@ return {
             vim.api.nvim_command('colorscheme catppuccin')
         end
     }
- --    {
-	-- 	'navarasu/onedark.nvim', -- onedark theme
-	-- 	config = function()
-	-- 		require("onedark").setup({
-	-- 			-- transparent = vim.g.transparent_enabled
-	-- 		})
- --            vim.api.nvim_command('colorscheme onedark')
-	-- 	end
-	-- }
+    --    {
+    -- 	'navarasu/onedark.nvim', -- onedark theme
+    -- 	config = function()
+    -- 		require("onedark").setup({
+    -- 		})
+    --            vim.api.nvim_command('colorscheme onedark')
+    -- 	end
+    -- }
 }
