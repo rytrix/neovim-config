@@ -46,6 +46,12 @@ return {
                         on_attach = lsp_on_attach,
                         filetypes = { "wgsl" }
                     })
+                elseif server_name == "clangd" then
+                    lspconfig[server_name].setup({
+                        capabilities = lsp_capabilities,
+                        on_attach = lsp_on_attach,
+                        cmd = { "clangd", "--header-insertion=never" }
+                    })
                 else
                     lspconfig[server_name].setup({
                         capabilities = lsp_capabilities,
