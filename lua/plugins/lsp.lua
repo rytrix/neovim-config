@@ -60,11 +60,14 @@ return {
                 end
             end
 
+
             -- Recognize wgsl -- weird plugin
             vim.api.nvim_command("autocmd BufNewFile,BufRead *.wgsl set filetype=wgsl")
 
             lspconfig.glslls.setup {
-                cmd = { "glslls", "--stdin", "--target-env=opengl4.5" }
+                cmd = { "glslls", "--stdin", "--target-env=opengl4.5" },
+                capabilities = lsp_capabilities,
+                on_attach = lsp_on_attach,
             }
 
             lspconfig.lua_ls.setup {
@@ -82,7 +85,7 @@ return {
     },
     {
         "williamboman/mason.nvim", -- :Mason to download lsps
-        build = ":MasonUpdate", -- :MasonUpdate updates registry contents
+        build = ":MasonUpdate",    -- :MasonUpdate updates registry contents
         -- lazy = true,
         -- event = { "BufReadPre", "BufNewFile" },
         config = function()
@@ -98,19 +101,18 @@ return {
                 ensure_installed = {
                     -- Replace these with whatever servers you want to install
                     'lua_ls',
-                    'clangd',
                 }
             })
         end
     },
-    {                      -- Autocompletion
-        'hrsh7th/nvim-cmp', -- Autocompletion plugin
+    {                               -- Autocompletion
+        'hrsh7th/nvim-cmp',         -- Autocompletion plugin
         dependencies = {
             'hrsh7th/cmp-nvim-lsp', -- LSP source for nvim-cmp
             'hrsh7th/cmp-nvim-lua',
             'hrsh7th/cmp-buffer',
             'hrsh7th/cmp-path',
-            'L3MON4D3/LuaSnip', -- Snippets plugin
+            'L3MON4D3/LuaSnip',        -- Snippets plugin
             'saadparwaiz1/cmp_luasnip' -- source for nvim-cmp
         },
         lazy = true,
