@@ -11,7 +11,7 @@ return {
                 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, attach_opts)
                 vim.keymap.set('n', 'K', vim.lsp.buf.hover, attach_opts)
                 vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, attach_opts)
-                vim.keymap.set('n', '<M-s>', vim.lsp.buf.signature_help, attach_opts)
+                vim.keymap.set('n', '<C-s>', vim.lsp.buf.signature_help, attach_opts)
                 vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, attach_opts)
                 vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, attach_opts)
                 vim.keymap.set('n', '<leader>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end,
@@ -130,10 +130,10 @@ return {
                     end,
                 },
                 mapping = cmp.mapping.preset.insert {
-                    ['<M-d>'] = cmp.mapping.scroll_docs(-4),
-                    ['<M-f>'] = cmp.mapping.scroll_docs(4),
-                    ['<M-Space>'] = cmp.mapping.complete {},
-                    ['<MR>'] = cmp.mapping.confirm {
+                    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+                    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+                    ['<C-Space>'] = cmp.mapping.complete {},
+                    ['<CR>'] = cmp.mapping.confirm {
                         behavior = cmp.ConfirmBehavior.Replace,
                         select = true,
                     },
