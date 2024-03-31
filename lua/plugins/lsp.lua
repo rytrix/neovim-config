@@ -43,6 +43,18 @@ return {
 
             vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
+            vim.diagnostic.config({
+                -- update_in_insert = true,
+                float = {
+                    focusable = false,
+                    style = "minimal",
+                    -- border = "rounded",
+                    source = "always",
+                    header = "",
+                    prefix = "",
+                },
+            })
+
             -- nvim-cmp supports additional completion capabilities
             local lsp_capabilities = vim.lsp.protocol.make_client_capabilities()
             lsp_capabilities = require('cmp_nvim_lsp').default_capabilities(lsp_capabilities)
