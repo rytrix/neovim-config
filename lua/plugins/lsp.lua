@@ -1,8 +1,26 @@
 return {
     {
         "neovim/nvim-lspconfig",
-        -- lazy = true,
-        -- event = { "BufReadPre", "BufNewFile" },
+        dependencies = {
+            {
+                "williamboman/mason.nvim", -- :Mason to download lsps
+                build = ":MasonUpdate",    -- :MasonUpdate updates registry contents
+            },
+            "williamboman/mason-lspconfig.nvim",
+            {
+                'hrsh7th/nvim-cmp',         -- Autocompletion plugin
+                dependencies = {
+                    'hrsh7th/cmp-nvim-lsp', -- LSP source for nvim-cmp
+                    'hrsh7th/cmp-nvim-lua',
+                    'hrsh7th/cmp-buffer',
+                    'hrsh7th/cmp-path',
+                    'L3MON4D3/LuaSnip',        -- Snippets plugin
+                    'saadparwaiz1/cmp_luasnip' -- source for nvim-cmp
+                },
+                lazy = true,
+                event = { "BufReadPre", "BufNewFile" },
+            },
+        },
         config = function()
             local lspconfig = require('lspconfig')
             local lsp_on_attach = function(_, bufnr)
@@ -27,97 +45,61 @@ return {
             local lsp_capabilities = vim.lsp.protocol.make_client_capabilities()
             lsp_capabilities = require('cmp_nvim_lsp').default_capabilities(lsp_capabilities)
 
-            -- require('mason-lspconfig').setup_handlers({
-            --     function(server_name)
-            --         lspconfig[server_name].setup({
-            --             capabilities = lsp_capabilities,
-            --             on_attach = lsp_on_attach,
-            --         })
-            --     end,
-            -- })
+            require("mason").setup()
 
-            -- if servers are not working try this:
-            local get_servers = require('mason-lspconfig').get_installed_servers
-            -- Enable the following language servers
-            for _, server_name in ipairs(get_servers()) do
-                if server_name == "wgsl_analyzer" then
-                    lspconfig[server_name].setup({
-                        capabilities = lsp_capabilities,
-                        on_attach = lsp_on_attach,
-                        filetypes = { "wgsl" }
-                    })
-                elseif server_name == "clangd" then
-                    lspconfig[server_name].setup({
-                        capabilities = lsp_capabilities,
-                        on_attach = lsp_on_attach,
-                        cmd = { "clangd", "--header-insertion=never" }
-                    })
-                else
-                    lspconfig[server_name].setup({
-                        capabilities = lsp_capabilities,
-                        on_attach = lsp_on_attach,
-                    })
-                end
-            end
+            require("mason-lspconfig").setup({
+                ensure_installed = {
+                    -- Replace these with whatever servers you want to install
+                    "lua_ls",
+                },
+                handlers = {
+                    function(server_name)
+                        lspconfig[server_name].setup({
+                            capabilities = lsp_capabilities,
+                            on_attach = lsp_on_attach,
+                        })
+                    end,
+                    ["wgsl_analyzer"] = function()
+                        lspconfig["wgsl_analyzer"].setup({
+                            capabilities = lsp_capabilities,
+                            on_attach = lsp_on_attach,
+                            filetypes = { "wgsl" }
+                        })
+                    end,
+                    ["clangd"] = function()
+                        lspconfig["clangd"].setup({
+                            capabilities = lsp_capabilities,
+                            on_attach = lsp_on_attach,
+                            cmd = { "clangd", "--header-insertion=never" }
+                        })
+                    end,
+                    ["lua_ls"] = function()
+                        lspconfig["lua_ls"].setup({
+                            capabilities = lsp_capabilities,
+                            on_attach = lsp_on_attach,
+                            settings = {
+                                Lua = {
+                                    diagnostics = {
+                                        globals = { "vim", "it", "describe", "before_each", "after_each" }
+                                    }
+                                }
+                            }
+                        })
+                    end,
+                }
+            })
 
-
-            -- Recognize wgsl -- weird plugin
+            -- Recognize wgsl
             vim.api.nvim_command("autocmd BufNewFile,BufRead *.wgsl set filetype=wgsl")
 
+            -- glsl
             lspconfig.glslls.setup {
                 cmd = { "glslls", "--stdin", "--target-env=opengl4.5" },
                 capabilities = lsp_capabilities,
                 on_attach = lsp_on_attach,
             }
 
-            lspconfig.lua_ls.setup {
-                on_attach = lsp_on_attach,
-                capabilities = lsp_capabilities,
-                settings = {
-                    Lua = {
-                        completion = {
-                            callSnippet = 'Replace',
-                        },
-                    },
-                },
-            }
-        end
-    },
-    {
-        "williamboman/mason.nvim", -- :Mason to download lsps
-        build = ":MasonUpdate",    -- :MasonUpdate updates registry contents
-        -- lazy = true,
-        -- event = { "BufReadPre", "BufNewFile" },
-        config = function()
-            require("mason").setup()
-        end
-    },
-    {
-        "williamboman/mason-lspconfig.nvim",
-        -- lazy = true,
-        -- event = { "BufReadPre", "BufNewFile" },
-        config = function()
-            require("mason-lspconfig").setup({
-                ensure_installed = {
-                    -- Replace these with whatever servers you want to install
-                    'lua_ls',
-                }
-            })
-        end
-    },
-    {                               -- Autocompletion
-        'hrsh7th/nvim-cmp',         -- Autocompletion plugin
-        dependencies = {
-            'hrsh7th/cmp-nvim-lsp', -- LSP source for nvim-cmp
-            'hrsh7th/cmp-nvim-lua',
-            'hrsh7th/cmp-buffer',
-            'hrsh7th/cmp-path',
-            'L3MON4D3/LuaSnip',        -- Snippets plugin
-            'saadparwaiz1/cmp_luasnip' -- source for nvim-cmp
-        },
-        lazy = true,
-        event = { "BufReadPre", "BufNewFile" },
-        config = function()
+            -- completion
             local cmp = require('cmp')
             local luasnip = require('luasnip')
 
@@ -134,7 +116,7 @@ return {
                     ['<C-f>'] = cmp.mapping.scroll_docs(4),
                     ['<C-Space>'] = cmp.mapping.complete {},
                     ['<CR>'] = cmp.mapping.confirm {
-                        behavior = cmp.ConfirmBehavior.Replace,
+                        -- behavior = cmp.ConfirmBehavior.Replace,
                         select = true,
                     },
                     ['<Tab>'] = cmp.mapping(function(fallback)
