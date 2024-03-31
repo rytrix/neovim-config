@@ -41,6 +41,8 @@ return {
                 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
             end
 
+            vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+
             -- nvim-cmp supports additional completion capabilities
             local lsp_capabilities = vim.lsp.protocol.make_client_capabilities()
             lsp_capabilities = require('cmp_nvim_lsp').default_capabilities(lsp_capabilities)

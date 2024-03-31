@@ -5,17 +5,9 @@ local set = vim.keymap.set
 -- map('n', 'l', ':IndentLinesToggle<CR>', {})
 -- set('n', '<leader>;', vim.cmd.IndentLinesToggle, {})
 
-local builtin = require('telescope.builtin')
-set('n', '<leader>s', builtin.find_files, {})
-set('n', '<leader>g', builtin.live_grep, {})
-set('n', '<leader>b', builtin.buffers, {})
-set('n', '<leader>h', builtin.help_tags, {})
-
-set('n', '<leader>u', vim.cmd.UndotreeToggle, {})
-
 --Remap for dealing with word wrap
--- set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
--- set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 map("n", "<C-Shift-C>", ":yank<CR>", { noremap = true }) -- yank
 
@@ -47,8 +39,6 @@ set("n", "<leader>Y", [["+Y]])
 
 set("n", "Q", "<nop>") -- prime told me to do this idk why
 
-set("n", "<leader>f", vim.lsp.buf.format)
-
 -- search on current word
 set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 -- make current file executable
@@ -57,6 +47,6 @@ set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 set({ "n", "v" }, "<C-h>", "^", { noremap = true })
 set({ "n", "v" }, "<C-l>", "$", { noremap = true })
 
--- I accident do :W so much
+-- I accidently do :W so much
 vim.api.nvim_command("command! W :w")
 vim.api.nvim_command("command! Wq :wq")
