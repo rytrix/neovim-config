@@ -16,7 +16,7 @@
 - \<leader\>d delete without copying
 - \<leader\>y copy into system keyboard
 - \<leader\>f format buffer
-- \<leader\>r search current word
+- \<leader\>r replace current word
 - \<leader\>x make file executable
 - \<C-h\> jump to start of first word
 - \<C-l\> jump to end of line 
