@@ -47,7 +47,7 @@ set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 set({ "n", "v" }, "<C-h>", "^", { noremap = true })
 set({ "n", "v" }, "<C-l>", "$", { noremap = true })
 
-set("n", "<leader>e", "<cmd>Ex<CR>", { silent = true })
+set("n", "<leader>w", "<cmd>Explore<CR>", { noremap = true })
 
 -- I accidently do :W so much
 vim.api.nvim_command("command! W :w")
