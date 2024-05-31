@@ -103,6 +103,9 @@ return {
                 }
             })
 
+            -- Stop formatting on save
+            vim.g.zig_fmt_autosave = 0
+
             -- Recognize wgsl
             vim.api.nvim_command("autocmd BufNewFile,BufRead *.wgsl set filetype=wgsl")
 
