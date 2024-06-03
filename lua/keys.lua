@@ -42,7 +42,7 @@ set("n", "Q", "<nop>") -- prime told me to do this idk why
 -- search on current word
 set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 -- make current file executable
-set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+-- set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 set({ "n", "v" }, "<C-h>", "^", { noremap = true })
 set({ "n", "v" }, "<C-l>", "$", { noremap = true })
