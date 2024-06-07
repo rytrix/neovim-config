@@ -47,7 +47,7 @@ set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 set({ "n", "v" }, "<C-h>", "^", { noremap = true })
 set({ "n", "v" }, "<C-l>", "$", { noremap = true })
 
-set("n", "<leader>w", "<cmd>Explore<CR>", { noremap = true })
+set("n", "<leader>n", "<cmd>Explore<CR>", { noremap = true })
 
 -- I accidently do :W so much
 vim.api.nvim_command("command! W :w")
