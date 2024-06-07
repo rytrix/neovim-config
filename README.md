@@ -1,7 +1,7 @@
 # neovim-config
 
 # keybinds I set and use often
-- \<leader\>w file tree
+- \<leader\>n netrw
 - \<leader\>s find files
 - \<leader\>g live grep
 - \<leader\>b find buffers
