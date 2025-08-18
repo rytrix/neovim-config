@@ -1,21 +1,45 @@
 return {
     {
         "neovim/nvim-lspconfig",
+        tag = "v2.4.0",
         dependencies = {
             {
                 "williamboman/mason.nvim", -- :Mason to download lsps
                 build = ":MasonUpdate",    -- :MasonUpdate updates registry contents
+                tag = "v2.0.1",
             },
-            "williamboman/mason-lspconfig.nvim",
             {
-                'hrsh7th/nvim-cmp',         -- Autocompletion plugin
+                "williamboman/mason-lspconfig.nvim",
+                tag = "v2.1.0",
+            },
+            {
+                "hrsh7th/nvim-cmp",     -- Autocompletion plugin
+                commit = "b5311ab",
                 dependencies = {
-                    'hrsh7th/cmp-nvim-lsp', -- LSP source for nvim-cmp
-                    'hrsh7th/cmp-nvim-lua',
-                    'hrsh7th/cmp-buffer',
-                    'hrsh7th/cmp-path',
-                    'L3MON4D3/LuaSnip',        -- Snippets plugin
-                    'saadparwaiz1/cmp_luasnip' -- source for nvim-cmp
+                    {
+                        "hrsh7th/cmp-nvim-lsp",     -- LSP source for nvim-cmp
+                        commit = "bd5a7d6",
+                    },
+                    {
+                        "hrsh7th/cmp-nvim-lua",
+                        commit = "f12408b",
+                    },
+                    {
+                        "hrsh7th/cmp-buffer",
+                        commit = "b74fab3",
+                    },
+                    {
+                        "hrsh7th/cmp-path",
+                        commit = "c642487",
+                    },
+                    {
+                        "L3MON4D3/LuaSnip",     -- Snippets plugin
+                        tag = "v2.4.0",
+                    },
+                    {
+                        "saadparwaiz1/cmp_luasnip",     -- source for nvim-cmp
+                        commit = "98d9cb5",
+                    },
                 },
                 lazy = true,
                 event = { "BufReadPre", "BufNewFile" },

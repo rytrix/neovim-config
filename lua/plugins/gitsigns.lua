@@ -3,6 +3,7 @@
 return {
     {
         'lewis6991/gitsigns.nvim', -- Add git related info in the signs columns and popups
+        tag = "v1.0.2",
         event = { "BufReadPre", "BufNewFile" },
         config = function()
             require('gitsigns').setup {

@@ -1,6 +1,10 @@
 return {
-    'nvim-telescope/telescope.nvim',
-    dependencies = 'nvim-lua/plenary.nvim',
+    "nvim-telescope/telescope.nvim",
+    version = "0.1.8",
+    dependencies = {
+        'nvim-lua/plenary.nvim',
+        commit = "b9fd522"
+    },
     config = function()
         local builtin = require('telescope.builtin')
         vim.keymap.set('n', '<leader>s', builtin.find_files, {})

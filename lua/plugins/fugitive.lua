@@ -1,5 +1,6 @@
 return {
     {
-        "tpope/vim-fugitive"
+        "tpope/vim-fugitive",
+        commit = "61b51c0"
     }
 }

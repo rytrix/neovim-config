@@ -1,6 +1,7 @@
 return {
     {
         'nvim-treesitter/nvim-treesitter', -- tree sitter and treee sitter update
+        tag = "v0.10.0",
         build = ':TSUpdate',
         -- lazy = true,
         -- event = { "BufReadPre", "BufNewFile" },

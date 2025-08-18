@@ -4,6 +4,7 @@
 return {
     {
         "theprimeagen/harpoon", -- file navigation
+        commit = "1bc17e3",
         config = function()
             local mark = require("harpoon.mark")
             local ui = require("harpoon.ui")

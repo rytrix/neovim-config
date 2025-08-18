@@ -1,7 +1,7 @@
 return {
-    'Mofiqul/dracula.nvim',
     {
         "catppuccin/nvim",
+        commit = "211dc36",
         name = "catppuccin",
         priority = 1000,
         config = function()
@@ -57,6 +57,8 @@ return {
             vim.cmd.colorscheme 'catppuccin'
         end
     }
+
+    -- 'Mofiqul/dracula.nvim',
 
     -- {
     --     'navarasu/onedark.nvim', -- onedark theme
