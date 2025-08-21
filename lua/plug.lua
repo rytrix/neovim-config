@@ -17,3 +17,5 @@ require("lazy").setup({
         import = "plugins"
     },
 })
+
+require("after")
