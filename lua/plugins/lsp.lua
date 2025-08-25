@@ -3,17 +3,15 @@ return {
         "neovim/nvim-lspconfig",
         tag = "v2.4.0",
     },
-
-
-    -- {
-    --     "williamboman/mason.nvim", -- :Mason to download lsps
-    --     build = ":MasonUpdate",    -- :MasonUpdate updates registry contents
-    --     tag = "v2.0.1",
-    -- },
-    -- {
-    --     "williamboman/mason-lspconfig.nvim",
-    --     tag = "v2.1.0",
-    -- },
+    {
+        "williamboman/mason.nvim", -- :Mason to download lsps
+        build = ":MasonUpdate",    -- :MasonUpdate updates registry contents
+        tag = "v2.0.1",
+    },
+    {
+        "williamboman/mason-lspconfig.nvim",
+        tag = "v2.1.0",
+    },
     
     -- {
     --     dependencies = {
