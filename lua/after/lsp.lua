@@ -15,14 +15,16 @@ vim.lsp.config("*", {
 -- vim.lsp.enable("clangd")
 -- vim.lsp.enable("rust-analyzer")
 
-vim.keymap.set("n", "gd", vim.lsp.buf.definition, {desc = "LSP go to definition"})
-vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {desc = "LSP go to declaration"})
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "LSP go to definition" })
+vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "LSP go to declaration" })
 vim.keymap.set("n", "K", vim.lsp.buf.hover)
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
 vim.keymap.set("n", "<C-s>", vim.lsp.buf.signature_help, attach_opts)
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, attach_opts)
 vim.keymap.set("n", "<leader>rr", require("telescope.builtin").lsp_references, attach_opts)
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+vim.keymap.set('n', 'ca', vim.lsp.buf.code_action, attach_opts)
+vim.keymap.set('n', 'so', require('telescope.builtin').lsp_references, attach_opts)
 
 local lspconfig = require('lspconfig')
 
@@ -87,4 +89,3 @@ vim.api.nvim_command("autocmd BufNewFile,BufRead *.wgsl set filetype=wgsl")
 --     on_attach = lsp_on_attach,
 -- }
 --
-
