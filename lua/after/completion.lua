@@ -1,5 +1,5 @@
 -- completion
-vim.opt.completeopt = { "menuone", "popup" } 
+vim.opt.completeopt = { "menuone", "popup" }
 
 local cmp = require('cmp')
 local luasnip = require('luasnip')
@@ -44,5 +44,6 @@ cmp.setup {
         { name = 'nvim_lua' },
         { name = 'luasnip' },
         { name = 'buffer' },
+        { name = 'path' },
     },
 }
