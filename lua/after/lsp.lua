@@ -2,17 +2,17 @@ vim.lsp.config("*", {
     root_markers = { ".git" },
 })
 
--- vim.lsp.config("clangd", {
---     cmd = {"clangd", "--header-insertion=never"},
---     filetypes = {"c", "c++"},
--- })
+vim.lsp.config("clangd", {
+    cmd = {"clangd", "--header-insertion=never"},
+    filetypes = {"c", "cpp"},
+})
 
 -- vim.lsp.config("rust-analyzer", {
 --     cmd = {"rust-analyzer"},
 --     filetypes = {"rust"}
 -- })
 
--- vim.lsp.enable("clangd")
+vim.lsp.enable("clangd")
 -- vim.lsp.enable("rust-analyzer")
 
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "LSP go to definition" })
@@ -29,52 +29,52 @@ vim.keymap.set('n', 'so', require('telescope.builtin').lsp_references, attach_op
 local lspconfig = require('lspconfig')
 
 -- nvim-cmp supports additional completion capabilities
-local lsp_capabilities = vim.lsp.protocol.make_client_capabilities()
-lsp_capabilities = require('cmp_nvim_lsp').default_capabilities(lsp_capabilities)
-
-require("mason").setup()
-
-require("mason-lspconfig").setup({
-    ensure_installed = {
-        -- Replace these with whatever servers you want to install
-        "lua_ls",
-    },
-    handlers = {
-        function(server_name)
-            lspconfig[server_name].setup({
-                capabilities = lsp_capabilities,
-                on_attach = lsp_on_attach,
-            })
-        end,
-        ["wgsl_analyzer"] = function()
-            lspconfig["wgsl_analyzer"].setup({
-                capabilities = lsp_capabilities,
-                on_attach = lsp_on_attach,
-                filetypes = { "wgsl" }
-            })
-        end,
-        ["clangd"] = function()
-            lspconfig["clangd"].setup({
-                capabilities = lsp_capabilities,
-                on_attach = lsp_on_attach,
-                cmd = { "clangd", "--header-insertion=never" }
-            })
-        end,
-        ["lua_ls"] = function()
-            lspconfig["lua_ls"].setup({
-                capabilities = lsp_capabilities,
-                on_attach = lsp_on_attach,
-                settings = {
-                    Lua = {
-                        diagnostics = {
-                            globals = { "vim", "it", "describe", "before_each", "after_each" }
-                        }
-                    }
-                }
-            })
-        end,
-    }
-})
+-- local lsp_capabilities = vim.lsp.protocol.make_client_capabilities()
+-- lsp_capabilities = require('cmp_nvim_lsp').default_capabilities(lsp_capabilities)
+--
+-- require("mason").setup()
+--
+-- require("mason-lspconfig").setup({
+--     ensure_installed = {
+--         -- Replace these with whatever servers you want to install
+--         "lua_ls",
+--     },
+--     handlers = {
+--         function(server_name)
+--             lspconfig[server_name].setup({
+--                 capabilities = lsp_capabilities,
+--                 on_attach = lsp_on_attach,
+--             })
+--         end,
+--         ["wgsl_analyzer"] = function()
+--             lspconfig["wgsl_analyzer"].setup({
+--                 capabilities = lsp_capabilities,
+--                 on_attach = lsp_on_attach,
+--                 filetypes = { "wgsl" }
+--             })
+--         end,
+--         ["clangd"] = function()
+--             lspconfig["clangd"].setup({
+--                 capabilities = lsp_capabilities,
+--                 on_attach = lsp_on_attach,
+--                 cmd = { "clangd", "--header-insertion=never" }
+--             })
+--         end,
+--         ["lua_ls"] = function()
+--             lspconfig["lua_ls"].setup({
+--                 capabilities = lsp_capabilities,
+--                 on_attach = lsp_on_attach,
+--                 settings = {
+--                     Lua = {
+--                         diagnostics = {
+--                             globals = { "vim", "it", "describe", "before_each", "after_each" }
+--                         }
+--                     }
+--                 }
+--             })
+--         end,
+--     }
+-- })
 
 -- Stop formatting on save
 vim.g.zig_fmt_autosave = 0

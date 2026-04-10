@@ -59,3 +59,6 @@ opt.compatible = false
 vim.cmd('filetype plugin on')
 -- Enable syntax highlighting
 vim.cmd('syntax on')
+
+-- prevent the built-in vim.lsp.completion autotrigger from selecting the first item
+vim.opt.completeopt = { "menuone", "noselect", "popup" }

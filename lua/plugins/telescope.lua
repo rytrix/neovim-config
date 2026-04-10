@@ -1,17 +1,17 @@
-return {
-    "nvim-telescope/telescope.nvim",
-    version = "0.2.1",
-    dependencies = {
-        { 'nvim-lua/plenary.nvim',                    commit = "b9fd522" },
-        { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make',    commit = "6fea601" },
+vim.pack.add({
+    {
+        src = "https://github.com/nvim-telescope/telescope.nvim",
+        name = "telescope",
+        version = "v0.2.2"
     },
-    config = function()
-        local builtin = require('telescope.builtin')
-        vim.keymap.set('n', '<leader>s', builtin.find_files, {})
-        vim.keymap.set('n', '<leader>g', builtin.live_grep, {})
-        vim.keymap.set('n', '<leader>b', builtin.buffers, {})
-        vim.keymap.set('n', '<leader>h', builtin.help_tags, {})
+    {
+        src = "https://github.com/nvim-lua/plenary.nvim",
+        version = "b9fd522"
+    },
+})
 
-        require('telescope').load_extension('fzf')
-    end
-}
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>s', builtin.find_files, {})
+vim.keymap.set('n', '<leader>g', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>b', builtin.buffers, {})
+vim.keymap.set('n', '<leader>h', builtin.help_tags, {})

@@ -1,0 +1,6 @@
+require("plugins.theme")
+require("plugins.lualine")
+require("plugins.telescope")
+require("plugins.oil")
+require("plugins.undotree")
+require("plugins.lsp")

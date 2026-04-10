@@ -1,7 +1,9 @@
-return {
-    "mbbill/undotree",     -- undo tree view (<Leader> space)
-    commit = "28f2f54",
-    config = function()
-        vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, {})
-    end
-}
+vim.pack.add({
+    {
+        src = "https://github.com/mbbill/undotree",
+        name = "undotree",
+        version = "28f2f54"
+    },
+})
+
+vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, {})
