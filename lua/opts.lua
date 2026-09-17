@@ -12,10 +12,8 @@ vim.o.mouse = 'a'         -- Enable mouse mode
 vim.o.breakindent = false -- Enable break indent
 -- vim.opt.guicursor = ""			 -- cursor?
 
-vim.o.updatetime = 250                 -- Decrease update time
-vim.o.completeopt = 'menuone,noselect' -- Set completeopt to have a better completion experience
-
-vim.opt.undofile = true                -- Enable persistent undo
+vim.o.updatetime = 250
+vim.opt.undofile = true
 
 -- opt.clipboard = "unnamedplus"    -- Use the system clipboard
 
@@ -60,5 +58,19 @@ vim.cmd('filetype plugin on')
 -- Enable syntax highlighting
 vim.cmd('syntax on')
 
+-- opt.laststatus = 3
+-- opt.cmdheight = 0
+-- opt.autoread = true
+
 -- prevent the built-in vim.lsp.completion autotrigger from selecting the first item
 vim.opt.completeopt = { "menuone", "noselect", "popup" }
+
+vim.g.netrw_liststyle = 3
+vim.g.netrw_banner = 0
+vim.g.netrw_winsize = 25
+vim.g.netrw_browse_split = 0
+vim.g.netrw_altfile = 1
+
+-- Search subdirectories with the find command (not including the ignored ones)
+vim.opt.path:append("**")
+vim.opt.wildignore:append({ "*/deps/*", "*/.git/*", "*/vendor/*" })

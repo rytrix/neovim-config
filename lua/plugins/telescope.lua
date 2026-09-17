@@ -10,6 +10,14 @@ vim.pack.add({
     },
 })
 
+-- require('telescope').setup({
+--     pickers = {
+--         find_files = {
+--             find_command = { "rg", "--files", "--hidden", "-g", "!.git", "!vendor" }
+--         }
+--     }
+-- })
+
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>s', builtin.find_files, {})
 vim.keymap.set('n', '<leader>g', builtin.live_grep, {})

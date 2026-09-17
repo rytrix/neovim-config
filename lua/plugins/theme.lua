@@ -6,6 +6,14 @@ vim.pack.add({
     }
 })
 
+-- vim.pack.add({
+--     {
+--         src = "https://github.com/Shatur/neovim-ayu.git",
+--         name = "ayu",
+--         version = "e5a9f0fa2918d6b5f57c21b3ac014314ee5e41c8"
+--     }
+-- })
+
 require("catppuccin").setup({
     flavour = "mocha", -- latte, frappe, macchiato, mocha
     background = { -- :h background
@@ -56,3 +64,21 @@ require("catppuccin").setup({
 })
 
 vim.cmd.colorscheme 'catppuccin'
+
+-- require('ayu').setup({
+--     mirage = false, -- Set to `true` to use `mirage` variant instead of `dark` for dark background.
+--     terminal = true, -- Set to `false` to let terminal manage its own colors.
+--     overrides = {
+--         Normal = { bg = "None" },
+--         NormalFloat = { bg = "none" },
+--         ColorColumn = { bg = "None" },
+--         SignColumn = { bg = "None" },
+--         Folded = { bg = "None" },
+--         FoldColumn = { bg = "None" },
+--         CursorLine = { bg = "None" },
+--         CursorColumn = { bg = "None" },
+--         VertSplit = { bg = "None" },
+--     }, -- A dictionary of group names, each associated with a dictionary of parameters (`bg`, `fg`, `sp` and `style`) and colors in hex.
+-- })
+--
+-- vim.cmd.colorscheme 'ayu'
