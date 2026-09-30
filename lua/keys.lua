@@ -49,6 +49,18 @@ set({ "n", "v" }, "<C-l>", "$", { noremap = true })
 
 set("n", "<leader>n", "<cmd>Explore<CR>", { noremap = true })
 
+vim.keymap.set('n', '<leader>u', function()
+    vim.cmd.packadd("nvim.undotree")
+    vim.cmd("Undotree")
+end, { desc = "Undotree toggle" })
+
 -- I accidently do :W so much
 vim.api.nvim_command("command! W :w")
 vim.api.nvim_command("command! Wq :wq")
+
+-- weee ctags
+vim.api.nvim_create_user_command("Ctags", function() 
+    vim.fn.jobstart("rg --files | ctags -L -")
+end, { desc = "generate ctags" })
+
+vim.keymap.set("n", "<leader>ct", ":Ctags<CR>", { desc = "generate ctags" })

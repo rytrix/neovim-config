@@ -13,18 +13,19 @@ local lspconfig = require('lspconfig')
 --
 
 vim.lsp.config("clangd", {
-    cmd = {"clangd", "--header-insertion=never"},
-    filetypes = {"c", "cpp"},
+    cmd = {"clangd", "--header-insertion=never", "--experimental-modules-support"},
+    filetypes = {"c", "cpp", "cppm"},
 })
 
--- vim.lsp.config("rust-analyzer", {
---     cmd = {"rust-analyzer"},
---     filetypes = {"rust"}
--- })
+vim.lsp.config("rust-analyzer", {
+    cmd = {"rust-analyzer"},
+    filetypes = {"rust"}
+})
 
 vim.lsp.enable("clangd")
 vim.lsp.enable("lua-language-server")
--- vim.lsp.enable("rust-analyzer")
+vim.lsp.enable("rust-analyzer")
+vim.lsp.enable("ols")
 
 -- vim.diagnostic.config({ virtual_text = true })
 

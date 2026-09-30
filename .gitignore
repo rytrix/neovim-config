@@ -3,6 +3,9 @@ luac.out
 
 lazy-lock.json
 
+# ctags
+tags
+
 # luarocks build files
 *.src.rock
 *.zip
