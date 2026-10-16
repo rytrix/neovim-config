@@ -63,7 +63,7 @@ vim.cmd('syntax on')
 -- opt.autoread = true
 
 -- prevent the built-in vim.lsp.completion autotrigger from selecting the first item
-vim.opt.completeopt = { "menuone", "noselect", "popup" }
+vim.opt.completeopt = { "menu", "menuone", "noselect", "popup" }
 
 vim.g.netrw_liststyle = 3
 vim.g.netrw_banner = 0
@@ -74,3 +74,5 @@ vim.g.netrw_altfile = 1
 -- Search subdirectories with the find command (not including the ignored ones)
 vim.opt.path:append("**")
 vim.opt.wildignore:append({ "*/deps/*", "*/.git/*", "*/vendor/*" })
+
+vim.opt.showtabline = 0

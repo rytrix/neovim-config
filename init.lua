@@ -18,7 +18,7 @@ require("diagnostics")
 -- Automatically remove trailing whitespace before writing the buffer
 -- vim.cmd([[autocmd BufWritePre * %s/\s\+$//e]])
 
--- vim.opt.grepprg = "rg --vimgrep --smart-case --hidden"
+vim.opt.grepprg = "rg --vimgrep --smart-case --hidden"
 -- vim.opt.grepformat = "%f:%l:%c:%m"
 
 -- vim.keymap.set("n", "<leader>g", function()

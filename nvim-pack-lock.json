@@ -5,6 +5,11 @@
       "src": "https://github.com/Shatur/neovim-ayu.git",
       "version": "'e5a9f0fa2918d6b5f57c21b3ac014314ee5e41c8'"
     },
+    "blink-cmp": {
+      "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
+      "src": "https://github.com/saghen/blink.cmp",
+      "version": "'v1.10.2'"
+    },
     "catppuccin": {
       "rev": "605b4603797de970e9f3a4238c199c850da03186",
       "src": "https://github.com/catppuccin/nvim",

@@ -2,7 +2,7 @@ vim.lsp.config("*", {
     root_markers = { ".git" },
 })
 
-local lspconfig = require('lspconfig')
+-- local lspconfig = require('lspconfig')
 
 -- -- glsl
 -- lspconfig.glslls.setup {
@@ -22,9 +22,15 @@ vim.lsp.config("rust-analyzer", {
     filetypes = {"rust"}
 })
 
+vim.lsp.config("wgsl-analyzer", {
+    cmd = {"wgsl-analyzer"},
+    filetypes = {"wgsl"}
+})
+
 vim.lsp.enable("clangd")
-vim.lsp.enable("lua-language-server")
+vim.lsp.enable("lua_ls")
 vim.lsp.enable("rust-analyzer")
+vim.lsp.enable("wgsl-analyzer")
 vim.lsp.enable("ols")
 
 -- vim.diagnostic.config({ virtual_text = true })
