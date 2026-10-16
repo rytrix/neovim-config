@@ -60,7 +60,7 @@ vim.api.nvim_command("command! Wq :wq")
 
 -- weee ctags
 vim.api.nvim_create_user_command("Ctags", function() 
-    vim.fn.jobstart("rg --files | ctags -L -")
+    vim.fn.jobstart("rg --files | ctags -")
 end, { desc = "generate ctags" })
 
 vim.keymap.set("n", "<leader>ct", ":Ctags<CR>", { desc = "generate ctags" })

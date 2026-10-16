@@ -10,7 +10,7 @@ require('blink.cmp').setup({
     keymap = {
         preset = 'default',
         ['<C-n>'] = { 'show', 'select_next', 'fallback' },
-        ['<tab>'] = { 'accept' },
+        ['<tab>'] = { 'accept', 'fallback' },
     },
     appearance = {
         nerd_font_variant = 'mono'
