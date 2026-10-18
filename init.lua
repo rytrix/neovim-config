@@ -6,7 +6,6 @@ vim.g.mapleader = " "
 vim.g.localleader = " "
 
 require("plug")
-require("vars")
 require("opts")
 require("keys")
 require("diagnostics")

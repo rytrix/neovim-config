@@ -1,6 +1,9 @@
 -- opts.lua
 local opt = vim.opt
-local cmd = vim.api.nvim_command
+local g = vim.g
+
+g.t_co = 256
+g.background = "dark"
 
 -- context
 -- opt.colorcolumn = '80'        -- str:  Show col for max line length
