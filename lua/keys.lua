@@ -31,7 +31,7 @@ set("n", "N", "Nzzzv")
 set("x", "<leader>p", [["_dP]])
 
 -- delete without copying
-set({ "n", "v" }, "<leader>d", [["_d]])
+-- set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- copy into system clipboard instead of vim clipboard
 set({ "n", "v" }, "<leader>y", [["+y]])
