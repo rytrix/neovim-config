@@ -9,7 +9,12 @@ vim.lsp.config("clangd", {
 
 vim.lsp.config("rust-analyzer", {
     cmd = {"rust-analyzer"},
-    filetypes = {"rust"}
+    filetypes = {"rust"},
+    settings = {
+        ["rust-analyzer"] = {
+            diagnostics = { disabled = { "inactive-code" } },
+        },
+    },
 })
 
 vim.lsp.config("wgsl-analyzer", {
@@ -17,11 +22,12 @@ vim.lsp.config("wgsl-analyzer", {
     filetypes = {"wgsl"}
 })
 
+-- vim.lsp.enable("lua_ls")
 vim.lsp.enable("clangd")
-vim.lsp.enable("lua_ls")
 vim.lsp.enable("rust-analyzer")
+
 -- vim.lsp.enable("wgsl-analyzer")
-vim.lsp.enable("ols")
+-- vim.lsp.enable("ols")
 
 -- vim.diagnostic.config({ virtual_text = true })
 

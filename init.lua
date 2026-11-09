@@ -9,6 +9,7 @@ require("plug")
 require("opts")
 require("keys")
 require("diagnostics")
+require("theme")
 
 -- Highlight trailing whitespace in red
 -- vim.cmd("highlight ExtraWhitespace ctermbg=red guibg=red")
@@ -19,6 +20,11 @@ require("diagnostics")
 
 vim.opt.grepprg = "rg --vimgrep --smart-case --hidden"
 -- vim.opt.grepformat = "%f:%l:%c:%m"
+
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldlevel = 99      -- start with everything open
+vim.opt.foldlevelstart = 99
 
 -- vim.keymap.set("n", "<leader>g", function()
 -- 	vim.ui.input({ prompt = "Grep: " }, function(pattern)
