@@ -18,3 +18,5 @@
 - \<leader\>y copy into system keyboard
 - \<leader\>f format buffer
 - \<leader\>r replace current word
+- \<C-Space\> completion
+- \<Tab\> accept completion
