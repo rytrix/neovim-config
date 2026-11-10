@@ -2,6 +2,7 @@
 luac.out
 
 lazy-lock.json
+nvim-pack-lock.json
 
 # ctags
 tags
