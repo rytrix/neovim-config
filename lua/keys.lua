@@ -44,10 +44,11 @@ set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 -- make current file executable
 -- set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
-set({ "n", "v" }, "<C-h>", "^", { noremap = true })
-set({ "n", "v" }, "<C-l>", "$", { noremap = true })
+-- set({ "n", "v" }, "<C-h>", "^", { noremap = true })
+-- set({ "n", "v" }, "<C-l>", "$", { noremap = true })
 
-set("n", "<leader>n", "<cmd>Explore<CR>", { noremap = true })
+-- I have oil on so..
+-- set("n", "<leader>n", "<cmd>Explore<CR>", { noremap = true })
 
 vim.keymap.set('n', '<leader>u', function()
     vim.cmd.packadd("nvim.undotree")
