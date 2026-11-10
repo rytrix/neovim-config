@@ -1,7 +1,7 @@
 # neovim-config
 
 # keybinds I set and use often
-- - oil
+- \- oil
 - \<leader\>s find files
 - \<leader\>g live grep
 - \<leader\>b find buffers
