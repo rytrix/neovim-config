@@ -1,4 +1,3 @@
-require("plugins.themes")
 require("plugins.telescope")
 require("plugins.oil")
 require("plugins.gitsigns")
