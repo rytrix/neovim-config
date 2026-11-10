@@ -1,14 +1,26 @@
 {
   "plugins": {
+    "ayu": {
+      "rev": "e5a9f0fa2918d6b5f57c21b3ac014314ee5e41c8",
+      "src": "https://github.com/Shatur/neovim-ayu.git"
+    },
     "blink-cmp": {
       "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
       "src": "https://github.com/saghen/blink.cmp",
       "version": "'v1.10.2'"
     },
+    "catppuccin": {
+      "rev": "605b4603797de970e9f3a4238c199c850da03186",
+      "src": "https://github.com/catppuccin/nvim"
+    },
     "gitsigns": {
       "rev": "a462f416e2ce4744531c6256252dee99a7d34a83",
       "src": "https://github.com/lewis6991/gitsigns.nvim",
       "version": "'v2.1.0'"
+    },
+    "lualine": {
+      "rev": "b8c23159c0161f4b89196f74ee3a6d02cdc3a955",
+      "src": "https://github.com/nvim-lualine/lualine.nvim"
     },
     "nvim-lspconfig": {
       "rev": "0203a9608d63eda57679b01e69f33a7b4c34b0d1",
@@ -19,6 +31,10 @@
       "rev": "29212d826054bb2948fa9d3a99eca9bf6a050eb2",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'29212d8'"
+    },
+    "nvim-web-devicons": {
+      "rev": "c2599a81ecabaae07c49ff9b45dcd032a8d90f1a",
+      "src": "https://github.com/kyazdani42/nvim-web-devicons"
     },
     "oil": {
       "rev": "975a77cce3c8cb742bc1b3629f4328f5ca977dad",

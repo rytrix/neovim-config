@@ -1,7 +1,6 @@
 require("plugins.themes")
 require("plugins.telescope")
 require("plugins.oil")
--- require("plugins.lsp")
 require("plugins.gitsigns")
 require("plugins.blink")
 require("plugins.treesitter")
