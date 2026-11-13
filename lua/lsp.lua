@@ -22,12 +22,16 @@ vim.lsp.config("wgsl-analyzer", {
     filetypes = {"wgsl"}
 })
 
+vim.lsp.config("ols", {
+    cmd = {"ols"},
+    filetypes = {"odin"}
+})
+
 -- vim.lsp.enable("lua_ls")
 vim.lsp.enable("clangd")
 vim.lsp.enable("rust-analyzer")
-
 -- vim.lsp.enable("wgsl-analyzer")
--- vim.lsp.enable("ols")
+vim.lsp.enable("ols")
 
 -- vim.diagnostic.config({ virtual_text = true })
 
